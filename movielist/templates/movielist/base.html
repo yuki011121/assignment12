@@ -1,0 +1,31 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'movielist/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <h1>Movie App</h1>
+            <ul>
+                <li><a href="{% url 'display_data' %}">Display Movies</a></li>
+                <li><a href="{% url 'add_data' %}">Add a New Movie</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Angie Ho</p>
+    </footer>
+</body>
+</html>

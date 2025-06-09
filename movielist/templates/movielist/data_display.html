@@ -1,0 +1,28 @@
+{% extends 'movielist/base.html' %}
+
+{% block content %}
+    <h2>{{ page_title }}</h2>
+
+    {% if movies %}
+        <table>
+            <thead>
+                <tr>
+                    {% for key in movies.0.keys %}
+                        <th>{{ key }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in movies %}
+                <tr>
+                    {% for value in movie.values %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No movies to display. Try adding one!</p>
+    {% endif %}
+{% endblock %}
